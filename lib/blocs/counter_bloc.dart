@@ -4,7 +4,7 @@ import 'package:bloc_pattern/bloc_pattern.dart';
 
 class CounterBloc extends BlocBase {
   int _counter = 0;
-  StreamController<int> _counterController = StreamController<int>();
+  StreamController<int> _counterController = StreamController<int>.broadcast();
 
   void incrementCounter() {
     _counter++;

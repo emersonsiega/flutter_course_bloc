@@ -1,6 +1,7 @@
 import 'package:bloc_pattern/bloc_pattern.dart';
 import 'package:counter_with_stream/blocs/counter_bloc.dart';
 import 'package:counter_with_stream/components/counter_text.dart';
+import 'package:counter_with_stream/components/styled_counter_text.dart';
 import 'package:flutter/material.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -26,9 +27,13 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-              'You have pushed the button this many times:',
+              'First counter: ',
             ),
             CounterText(),
+            Text(
+              'Second counter: ',
+            ),
+            StyledCounterText(),
           ],
         ),
       ),
