@@ -1,13 +1,16 @@
 import 'package:bloc_pattern/bloc_pattern.dart';
 import 'package:counter_with_stream/blocs/counter_bloc.dart';
-import 'package:counter_with_stream/components/counter_text.dart';
-import 'package:counter_with_stream/components/styled_counter_text.dart';
 import 'package:flutter/material.dart';
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
+  MyHomePage({
+    Key key,
+    this.title,
+    this.counterText,
+  }) : super(key: key);
 
   final String title;
+  final Widget counterText;
 
   @override
   _MyHomePageState createState() => _MyHomePageState();
@@ -27,13 +30,9 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-              'First counter: ',
+              'Counter: ',
             ),
-            CounterText(),
-            Text(
-              'Second counter: ',
-            ),
-            StyledCounterText(),
+            widget.counterText,
           ],
         ),
       ),
